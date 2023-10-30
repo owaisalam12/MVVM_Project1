@@ -31,11 +31,12 @@ public class MainActivity extends AppCompatActivity implements TodoAdapter.ItemC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RecyclerView recyclerView=findViewById(R.id.recyclerView);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(linearLayoutManager);
+    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
+recyclerView.setLayoutManager(linearLayoutManager);
         todoAdapter=new TodoAdapter(this,todoResponseList,this);
         recyclerView.setAdapter(todoAdapter);
+        movieListViewModel=new ViewModelProvider(MainActivity.this).get(MovieListViewModel.class);
+        movieListViewModel.getTodoListObserver().observe(MainActivity.this, new Observer<List<TodoResponse>>() {
         movieListViewModel=new ViewModelProvider(this).get(MovieListViewModel.class);
         recyclerView.setAdapter(todoAdapter);
         movieListViewModel.getTodoListObserver().observe(this, new Observer<List<TodoResponse>>() {
