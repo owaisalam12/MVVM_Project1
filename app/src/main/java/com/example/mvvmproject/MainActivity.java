@@ -37,6 +37,9 @@ recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(todoAdapter);
         movieListViewModel=new ViewModelProvider(MainActivity.this).get(MovieListViewModel.class);
         movieListViewModel.getTodoListObserver().observe(MainActivity.this, new Observer<List<TodoResponse>>() {
+        movieListViewModel=new ViewModelProvider(this).get(MovieListViewModel.class);
+        recyclerView.setAdapter(todoAdapter);
+        movieListViewModel.getTodoListObserver().observe(this, new Observer<List<TodoResponse>>() {
             @Override
             public void onChanged(List<TodoResponse> todoResponses) {
                 todoResponseList=todoResponses;
