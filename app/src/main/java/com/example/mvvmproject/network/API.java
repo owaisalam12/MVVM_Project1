@@ -12,4 +12,8 @@ public interface API {
     Call<List<TodoResponse>> getAllTodos();
     @GET("/todos/1")
     Call<List<TodoResponse>> getAllTodos();
+    @GET("/getList/1")
+    Call<List<TodoResponse>> getAllTodos();
+    @GET("/togetDetail/1")
+    Call<List<TodoResponse>> getAllTodos();
 }
