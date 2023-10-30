@@ -10,4 +10,6 @@ import retrofit2.http.GET;
 public interface API {
     @GET("/todos")
     Call<List<TodoResponse>> getAllTodos();
+    @GET("/todos/1")
+    Call<List<TodoResponse>> getAllTodos();
 }

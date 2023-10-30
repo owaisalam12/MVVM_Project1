@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements TodoAdapter.ItemC
         todoAdapter=new TodoAdapter(this,todoResponseList,this);
         recyclerView.setAdapter(todoAdapter);
         movieListViewModel=new ViewModelProvider(this).get(MovieListViewModel.class);
+        recyclerView.setAdapter(todoAdapter);
         movieListViewModel.getTodoListObserver().observe(this, new Observer<List<TodoResponse>>() {
             @Override
             public void onChanged(List<TodoResponse> todoResponses) {
