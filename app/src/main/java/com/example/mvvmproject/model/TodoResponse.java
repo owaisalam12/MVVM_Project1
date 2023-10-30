@@ -11,7 +11,7 @@ public class TodoResponse {
     @SerializedName("id")
     @Expose
     private Integer id;
-    @SerializedName("title")
+    @SerializedName("tile")
     @Expose
     private String title;
     @SerializedName("completed")
